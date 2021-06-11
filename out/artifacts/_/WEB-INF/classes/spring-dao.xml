@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+<!--1.connect database file-->
+<context:property-placeholder location="classpath:database.properties"/>
+
+<!--2.datasource-->
+<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+    <property name="driverClass" value="${jdbc.driver}"/>
+    <property name="jdbcUrl" value="${jdbc.url}"/>
+    <property name="user" value="${jdbc.username}"/>
+    <property name="password" value="${jdbc.password}"/>
+
+    <!-- c3p0 private property -->
+    <property name="maxPoolSize" value="30"/>
+    <property name="minPoolSize" value="10"/>
+    <!-- close connection not auto commit -->
+    <property name="autoCommitOnClose" value="false"/>
+    <!-- get connection over time -->
+    <property name="checkoutTimeout" value="10000"/>
+    <!-- when connection failure restart counts -->
+    <property name="acquireRetryAttempts" value="2"/>
+
+</bean>
+    <!--3.sqlSessionFactory-->
+<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSource"/>
+    <!--bind mybatis equipment file-->
+    <property name="configLocation" value="classpath:mybatis-config.xml"/>
+</bean>
+
+    <!--equip dao interface scan-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--add sqlSessionFactory-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <!--scan-->
+        <property name="basePackage" value="com.hu.Mapper"/>
+    </bean>
+</beans>
