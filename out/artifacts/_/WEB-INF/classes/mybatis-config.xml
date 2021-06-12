@@ -10,6 +10,7 @@
 
 <mappers>
     <mapper class="com.hu.Mapper.bookMapper"/>
+    <mapper class="com.hu.Mapper.adminMapper"/>
 </mappers>
 
 </configuration>

@@ -38,7 +38,7 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">首页</a></li>
-                <li><a href="${pageContext.request.contextPath}/book/book_manage">图书管理系统</a></li>
+                <li><a href="${pageContext.request.contextPath}/book/login">图书管理系统</a></li>
                 <li><a href="${pageContext.request.contextPath}/book/about">关于我</a></li>
             </ul>
         </div>

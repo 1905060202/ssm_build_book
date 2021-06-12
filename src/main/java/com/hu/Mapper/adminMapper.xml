@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hu.Mapper.adminMapper">
+<insert id="addadmin" parameterType="admin">
+    insert into library.admin(admin_id,password,username) values(#{admin_id},#{password},#{username})
+</insert>
+
+    <delete id="deleteadminById" parameterType="int">
+        delete
+        from library.admin
+        where admin_id = #{admin_id};
+    </delete>
+
+    <update id="updateadmin" parameterType="admin">
+        update library.admin
+        set admin_id = #{admin_id},password=#{password},username=#{username}
+        where admin_id=#{admin_id}
+    </update>
+
+    <select id="queryadminById" parameterType="int" resultType="admin">
+        select * from library.admin where admin_id = #{admin_id}
+    </select>
+
+    <select id="queryAlladmin" resultType="admin">
+        select * from library.admin
+    </select>
+</mapper>

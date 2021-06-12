@@ -13,6 +13,10 @@
         <property name="bookMapper" ref="bookMapper"/>
     </bean>
 
+    <bean id="adminServicelmpl" class="com.hu.service.adminServicelmpl">
+        <property name="adminMapper" ref="adminMapper"/>
+    </bean>
+
     <!--Declare thing configuration-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!--add data source-->

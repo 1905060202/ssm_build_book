@@ -50,17 +50,17 @@
     </div>
 </nav>
 
-<form class="form-horizontal " role="form">
+<form action="${pageContext.request.contextPath}/book/book_manage_2" method="post" class="form-horizontal " role="form">
     <div class="form-group">
         <label class="col-sm-2 control-label">账号：</label>
         <div class="col-sm-10">
-            <input id="zh" type="text" class="form-control" placeholder="账号" >
+            <input id="zh" type="text" class="form-control" placeholder="账号" name="admin_id">
         </div>
     </div>
     <div class="form-group">
         <label id="pwd" class="col-sm-2 control-label">密码：</label>
         <div class="col-sm-10">
-            <input id="pwd_real" type="password" class="form-control" placeholder="密码" >
+            <input id="pwd_real" type="password" class="form-control" placeholder="密码" name="password">
         </div>
     </div>
     <div class="form-group">
@@ -95,6 +95,9 @@
             return true;
         }
     });
+    var v =0;
+    if((${v})=="-1")
+        alert("密码或账号错误");
 
 </script>
 </body>

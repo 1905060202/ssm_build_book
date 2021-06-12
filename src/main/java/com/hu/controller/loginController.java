@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/book")
-public class Book_manage {
-    @RequestMapping("/book_manage")
-    public String get_Book_manage(){
+public class loginController {
+    @RequestMapping("/login")
+    public String getAbout(){
 
-        return "book_manage";
+        return "login";
     }
 }
