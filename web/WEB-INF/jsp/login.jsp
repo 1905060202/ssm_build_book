@@ -75,30 +75,19 @@
     </div>
 </form>
 <script type="text/javascript">
-    var s = 0;
     $("#login").click(function checkpwdAndzh(){
         var name = $("#zh").val();
         var pass = $("#pwd_real").val();
         if (name == "") {
             alert("用户名不能为空");
-            s=1;
             return false;
         } else if (pass == "") {
             alert("密码不能为空");
-            s=1;
             return false;
-        } else if((name == "")&& (pass = "")){
-            alert("您还什么都没输入！");
-        }else{
+        } else{
             return true;
         }
     });
-    var v = ${v};
-    if((v == "-1")&&(s==0)) {
-        alert("账号或密码错误！");
-        v == "0";
-    }
-    //s in case jump second alert "账号或密码错误！"
 </script>
 </body>
 </html>

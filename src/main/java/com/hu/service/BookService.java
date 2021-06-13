@@ -1,17 +1,18 @@
 package com.hu.service;
 
-import com.hu.pojo.books;
+import com.hu.pojo.book_info;
+
 
 import java.util.List;
 
 public interface BookService {
-    int addbook(books book);
+    int addbook(book_info book);
 
     int deleteBookById(int id);
 
-    int updateBook(books book);
+    int updateBook(book_info book);
 
-    books queryBookById(int id);
+    book_info queryBookById(int id);
 
-    List<books> queryAllBook();
+    List<book_info> queryAllBook();
 }

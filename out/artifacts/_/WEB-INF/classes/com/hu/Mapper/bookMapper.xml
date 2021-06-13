@@ -4,27 +4,27 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hu.Mapper.bookMapper">
 
-    <insert id="addbook" parameterType="books">
-       insert into ssmbuild.books(bookName,bookCounts,detail) values(#{bookName},#{bookCounts},#{detail})
+    <insert id="addbook" parameterType="book_info">
+       insert into library.book_info (name,author,publish,ISBN,introduction,language,price,pub_date,class_id,number) values(#{name},#{author},#{publish},{ISBN},{introduction},{language},{price},{pub_date},{class_id},{number})
     </insert>
 
     <delete id="deleteBookById" parameterType="int">
         delete
-        from ssmbuild.books
-        where bookID = #{bookID};
+        from library.book_info
+        where book_id = #{book_id};
     </delete>
     
-    <update id="updateBook" parameterType="books">
-        update ssmbuild.books
-        set bookName = #{bookName},bookCounts=#{bookCounts},detail=#{detail}
+    <update id="updateBook" parameterType="book_info">
+        update library.book_info
+        set name = #{name},author=#{author},publish=#{publish},ISBN=#{ISBN},introduction=#{introduction},language=#{language},price=#{price},pub_date=#{pub_date},class_id=#{class_id},number=#{number}
         where bookID=#{bookID}
     </update>
     
-    <select id="queryBookById" parameterType="books">
-        select * from ssmbuild.books where bookID = #{bookID}
+    <select id="queryBookById" parameterType="int" resultType="book_info">
+        select * from library.book_info where book_id = #{book_id}
     </select>
 
-    <select id="queryAllBook" resultType="books">
-        select * from ssmbuild.books
+    <select id="queryAllBook" resultType="book_info" >
+        select * from library.book_info
     </select>
 </mapper>
