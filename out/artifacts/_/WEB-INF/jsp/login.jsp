@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/JQuery.js"></script>
     <style>
+        #login{
+            width: 443px;
+        }
         .form-control{
             width: 443px;
         }
@@ -64,41 +67,38 @@
         </div>
     </div>
     <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox">记住密码
-                </label>
-            </div>
-        </div>
     </div>
     <div class="form-group">
-        <div  class="col-sm-offset-2 col-sm-2">
+        <div  class="col-sm-offset-2 col-sm-5">
             <button id="login" type="submit" class="btn btn-success"> 登录 </button>
-        </div>
-        <div class=" col-sm-offset-5">
-            <button id="forget" type="submit" class="btn btn-warning">忘记密码</button>
         </div>
     </div>
 </form>
 <script type="text/javascript">
+    var s = 0;
     $("#login").click(function checkpwdAndzh(){
         var name = $("#zh").val();
         var pass = $("#pwd_real").val();
         if (name == "") {
             alert("用户名不能为空");
+            s=1;
             return false;
         } else if (pass == "") {
             alert("密码不能为空");
+            s=1;
             return false;
-        } else {
+        } else if((name == "")&& (pass = "")){
+            alert("您还什么都没输入！");
+        }else{
             return true;
         }
     });
-    var v =0;
-    if((${v})=="-1")
-        alert("密码或账号错误");
-
+    var v = ${v};
+    if((v == "-1")&&(s==0)) {
+        alert("账号或密码错误！");
+        v == "0";
+    }
+    //s in case jump second alert "账号或密码错误！"
 </script>
 </body>
 </html>

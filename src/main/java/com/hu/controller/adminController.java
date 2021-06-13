@@ -21,8 +21,9 @@ public String login(admin admin,Model model){
     if(admin!=null)
     {
         return "book_manage";
+    }else{
+        model.addAttribute("v",-1);
+        return "login";
     }
-    model.addAttribute("v",-1);
-    return "fail";
 }
 }
