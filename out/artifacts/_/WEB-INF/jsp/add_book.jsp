@@ -63,12 +63,12 @@
                 <li><a href="${pageContext.request.contextPath}/book/admin_overview_book">总览 <span class="sr-only">(current)</span></a></li>
                 <li class="active"><a href="#" >上架图书</a></li>
                 <li><a href="#">更新图书</a></li>
-                <li><a href="#">下架图书</a></li>
+                <li><a href="${pageContext.request.contextPath}/book/delete_book">下架图书</a></li>
                 <li><a href="${pageContext.request.contextPath}">退出系统</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">添加图书</h1>
+            <h1 class="page-header">上架图书</h1>
 
             <div class="row placeholders">
                 <div class="col-xs-6 col-sm-3 placeholder">

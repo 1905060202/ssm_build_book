@@ -61,91 +61,53 @@
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li><a href="${pageContext.request.contextPath}/book/admin_overview_book">总览 <span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="#" >上架图书</a></li>
+                <li ><a href="${pageContext.request.contextPath}/book/add_book" >上架图书</a></li>
                 <li><a href="#">更新图书</a></li>
-                <li><a href="${pageContext.request.contextPath}/book/delete_book">下架图书</a></li>
+                <li class="active"><a href="#">下架图书</a></li>
                 <li><a href="${pageContext.request.contextPath}">退出系统</a></li>
             </ul>
         </div>
+        <form action="${pageContext.request.contextPath}/book/real_delete_book" method="post" class="form-horizontal " role="form">
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">上架图书</h1>
+            <h1 class="page-header">下架图书</h1>
 
             <div class="row placeholders">
                 <div class="col-xs-6 col-sm-3 placeholder">
-                   <form action="${pageContext.request.contextPath}/book/real_add_book" method="post" class="form-horizontal " role="form">
-                       <div class="form-group">
-                           <label class="col-sm-4 control-label">图书名:</label>
-                           <div class="col-sm-8">
-                               <input id="zh" type="text" class="form-control" placeholder="图书名" name="name">
-                           </div>
-                       </div>
-                       <div class="form-group">
-                           <label class="col-sm-4 control-label">作者:</label>
-                           <div class="col-sm-8">
-                               <input id="pwd_real" type="text" class="form-control" placeholder="作者" name="author">
-                           </div>
-                       </div>
-                       <div class="form-group">
-                           <label class="col-sm-4 control-label">出版社:</label>
-                           <div class="col-sm-8">
-                               <input id="pb" type="text" class="form-control" placeholder="出版社" name="publish">
-                           </div>
-                       </div>
-                       <div class="form-group">
-                           <label class="col-sm-4 control-label">ISBN:</label>
-                           <div class="col-sm-8">
-                               <input id="isbn" type="text" class="form-control" placeholder="ISBN" name="ISBN">
-                           </div>
-                       </div>
-                       <div class="form-group">
-                           <label class="col-sm-4 control-label">简介:</label>
-                           <div class="col-sm-8">
-                               <input id="intr" type="text" class="form-control" placeholder="简介" name="introduction">
-                           </div>
-                       </div>
-                       <div class="form-group">
-                           <label class="col-sm-4 control-label">语言:</label>
-                           <div class="col-sm-8">
-                               <input id="LANG" type="text" class="form-control" placeholder="语言" name="language">
-                           </div>
-                       </div>
-                       <div class="form-group">
-                           <label class="col-sm-4 control-label">价格:</label>
-                           <div class="col-sm-8">
-                               <input id="pri" type="text" class="form-control" placeholder="价格" name="price">
-                           </div>
-                       </div>
-                       <div class="form-group">
-                           <label class="col-sm-4 control-label">出版日期:</label>
-                           <div class="col-sm-8">
-                               <input id="pub_d" type="text" class="form-control" placeholder="出版日期" name="pub_date">
-                           </div>
-                       </div>
-                       <div class="form-group">
-                           <label class="col-sm-4 control-label">种类:</label>
-                           <div class="col-sm-8">
-                               <input id="class_i" type="text" class="form-control" placeholder="种类" name="class_id">
-                           </div>
-                       </div>
-                       <div class="form-group">
-                           <label class="col-sm-4 control-label">数量:</label>
-                           <div class="col-sm-8">
-                               <input id="num" type="text" class="form-control" placeholder="数量" name="number">
-                           </div>
-                       </div>
-                       <div class="form-group">
-                           <div class="col-sm-8">
-                               <button id="login" type="submit" class="btn btn-success" >上架</button>
-                           </div>
-                       </div>
 
-                   </form>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">图书ID:</label>
+                            <div class="col-sm-8">
+                                <input id="book_id" type="text" class="form-control" placeholder="图书ID" name="book_id">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8">
+                                <button id="login" type="submit" class="btn btn-success" >下架</button>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
+        </form>
     </div>
 </div>
-
+<script>
+    $("#login").click(function checkID(){
+        var id = $("#book_id").val();
+        if (id == "") {
+            alert("ID不能为空");
+            return false;
+        }else{
+            return true;
+        }
+    });
+    var check = "fail";
+    if(check ==${check}){
+        alert("查无此书");
+    }else{
+        alert("下架成功！");
+    }
+</script>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

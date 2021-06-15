@@ -27,6 +27,11 @@ public class Book_manage {
     public String add_book_page(){
         return "add_book";
     }
+    // just return delete_book page
+    @RequestMapping("/delete_book")
+    public String delete_book_page(){
+        return "delete_book";
+    }
     //return admin book manage page
     @RequestMapping("/admin_overview_book")
     public String back_overview(Model model){
@@ -41,9 +46,20 @@ public class Book_manage {
         if (check>0){
             List<book_info> list = bookService.queryAllBook();
             model.addAttribute("list",list);
-            model.addAttribute("ok",1);
             return "book_manage";
         }
         return "add_book";
+    }
+    //implement delete_book function
+    @RequestMapping("/real_delete_book")
+    public String delete_book(String book_id,Model model){
+        int check = bookService.deleteBookById(Integer.parseInt(book_id));
+        if (check>0){
+            List<book_info> list = bookService.queryAllBook();
+            model.addAttribute("list",list);
+            return "book_manage";
+        }
+        model.addAttribute("check","fail");
+        return "delete_book";
     }
 }
