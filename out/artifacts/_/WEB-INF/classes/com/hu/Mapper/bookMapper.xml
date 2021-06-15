@@ -17,7 +17,7 @@
     <update id="updateBook" parameterType="book_info">
         update library.book_info
         set name = #{name},author=#{author},publish=#{publish},ISBN=#{ISBN},introduction=#{introduction},language=#{language},price=#{price},pub_date=#{pub_date},class_id=#{class_id},number=#{number}
-        where bookID=#{bookID}
+        where book_id=#{book_id}
     </update>
     
     <select id="queryBookById" parameterType="int" resultType="book_info">

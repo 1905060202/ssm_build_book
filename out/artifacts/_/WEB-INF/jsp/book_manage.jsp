@@ -64,7 +64,7 @@
             <ul class="nav nav-sidebar">
                 <li class="active"><a href="#">总览 <span class="sr-only">(current)</span></a></li>
                 <li><a href="${pageContext.request.contextPath}/book/add_book">上架图书</a></li>
-                <li><a href="#">更新图书</a></li>
+                <li><a href="${pageContext.request.contextPath}/book/update_book">更新图书</a></li>
                 <li><a href="${pageContext.request.contextPath}/book/delete_book">下架图书</a></li>
                 <li><a href="${pageContext.request.contextPath}">退出系统</a></li>
             </ul>
