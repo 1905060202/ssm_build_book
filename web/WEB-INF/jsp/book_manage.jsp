@@ -63,10 +63,10 @@
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li class="active"><a href="#">总览 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">添加图书</a></li>
+                <li><a href="${pageContext.request.contextPath}/book/add_book">上架图书</a></li>
                 <li><a href="#">更新图书</a></li>
                 <li><a href="#">下架图书</a></li>
-                <li><a href="#">退出系统</a></li>
+                <li><a href="${pageContext.request.contextPath}">退出系统</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -80,7 +80,7 @@
                 </div>
             </div>
 
-            <h2 class="sub-header">Section title</h2>
+            <h2 class="sub-header">图书总览</h2>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>

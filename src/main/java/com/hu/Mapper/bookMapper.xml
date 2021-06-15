@@ -5,7 +5,7 @@
 <mapper namespace="com.hu.Mapper.bookMapper">
 
     <insert id="addbook" parameterType="book_info">
-       insert into library.book_info (name,author,publish,ISBN,introduction,language,price,pub_date,class_id,number) values(#{name},#{author},#{publish},{ISBN},{introduction},{language},{price},{pub_date},{class_id},{number})
+       insert into library.book_info (name,author,publish,ISBN,introduction,language,price,pub_date,class_id,number) values(#{name},#{author},#{publish},#{ISBN},#{introduction},#{language},#{price},#{pub_date},#{class_id},#{number})
     </insert>
 
     <delete id="deleteBookById" parameterType="int">

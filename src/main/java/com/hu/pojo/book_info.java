@@ -18,7 +18,7 @@ public class book_info {
     private String introduction;
     private String language;
     private int price;
-    private Date pub_date;
+    private String pub_date;
     private int class_id;
     private int number;
 
