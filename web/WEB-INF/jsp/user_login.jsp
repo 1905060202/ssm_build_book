@@ -46,20 +46,20 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="${pageContext.request.contextPath}">首页</a></li>
-                <li class="active"><a href="#">图书管理系统</a></li>
+                <li ><a href="${pageContext.request.contextPath}/book/book_manage_2">图书管理系统</a></li>
                 <li><a href="${pageContext.request.contextPath}/book/user_manage">用户管理系统</a></li>
-                <li><a href="${pageContext.request.contextPath}/book/user_login">图书预约系统</a></li>
+                <li class="active"><a href="#">图书预约系统</a></li>
                 <li><a href="${pageContext.request.contextPath}/book/about">关于我</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<form action="${pageContext.request.contextPath}/book/book_manage_2" method="post" class="form-horizontal " role="form">
+<form action="${pageContext.request.contextPath}/book/user_login" method="post" class="form-horizontal " role="form">
     <div class="form-group">
         <label class="col-sm-2 control-label">账号：</label>
         <div class="col-sm-10">
-            <input id="zh" type="text" class="form-control" placeholder="账号" name="admin_id">
+            <input id="zh" type="text" class="form-control" placeholder="账号" name="reader_id">
         </div>
     </div>
     <div class="form-group">

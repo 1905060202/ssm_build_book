@@ -20,7 +20,7 @@
     <link rel="icon" href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.9/favicon.ico">
     <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/dashboard/">
 
-    <title>用户管理系统</title>
+    <title>图书预约系统</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.9/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +53,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">用户管理系统</a>
+            <a class="navbar-brand" href="#">图书预约系统</a>
         </div>
     </div>
 </nav>
@@ -62,9 +62,9 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">用户总览 <span class="sr-only">(current)</span></a></li>
-                <li><a href="${pageContext.request.contextPath}/book/add_user">添加用户</a></li>
-                <li><a href="${pageContext.request.contextPath}/book/update_user">更新用户</a></li>
+                <li class="active"><a href="#">预约图书<span class="sr-only">(current)</span></a></li>
+                <li><a href="#">归还图书</a></li>
+                <li><a href="#">注销用户</a></li>
                 <li><a href="${pageContext.request.contextPath}">退出系统</a></li>
             </ul>
         </div>
@@ -73,7 +73,7 @@
 
             <div class="row placeholders">
                 <div class="col-xs-6 col-sm-3 placeholder">
-                    <img src="${ctx}/images/rljs.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <img src="../../images/rljs.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>胡雅宁</h4>
                     <span class="text-muted">无拘无束，坦荡潇洒</span>
                 </div>
@@ -93,7 +93,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="user" items="${list}">
+                 <%--   <c:forEach var="user" items="${list}">
                         <tr>
                             <td>${user.reader_id}</td>
                             <td>${user.name}</td>
@@ -102,7 +102,7 @@
                             <td>${user.address}</td>
                             <td>${user.phone}</td>
                         </tr>
-                    </c:forEach>
+                    </c:forEach>--%>
                     </tbody>
                 </table>
             </div>

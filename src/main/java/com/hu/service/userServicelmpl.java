@@ -2,6 +2,7 @@ package com.hu.service;
 
 import com.hu.Mapper.adminMapper;
 import com.hu.Mapper.userMapper;
+import com.hu.pojo.reader_card;
 import com.hu.pojo.reader_info;
 
 import java.util.List;
@@ -32,7 +33,15 @@ public class userServicelmpl implements userService{
     public List<reader_info> queryAllUser() {
         return userMapper.queryAllUser();
     }
-
+    @Override
+    public reader_info checkLogin(int reader_id){
+        reader_info user = userMapper.queryuserById(reader_id);
+        if(user!=null){
+            return user;
+        }else{
+            return null;
+        }
+    }
     public void setUserMapper(userMapper userMapper) {
         this.userMapper=userMapper;
     }

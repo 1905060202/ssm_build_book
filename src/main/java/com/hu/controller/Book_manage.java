@@ -6,9 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.hu.pojo.admin;
 import com.hu.pojo.book_info;
+import com.hu.pojo.reader_card;
 import com.hu.service.BookService;
 import com.hu.service.adminService;
 import com.hu.service.userService;
+import com.hu.service.user_login_Service;
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -20,6 +22,8 @@ public class Book_manage {
     private BookService bookService;
     @Resource
     private userService userService;
+    @Resource
+    private user_login_Service user_login_service;
     @RequestMapping("/book_manage")
     public String get_Book_manage(){
         return "book_manage";
@@ -120,5 +124,20 @@ public class Book_manage {
         }
         model.addAttribute("check","fail");
         return "update_user";
+    }
+    //implement user_login function
+    @RequestMapping("/user_login")
+    public String user_login(reader_card user,Model model){
+       reader_info check = userService.checkLogin(user.getReader_id());
+       if(check!=null){
+           reader_card check2 = user_login_service.checkLogin(user.getReader_id(),user.getPassword());
+           if(check2!=null)
+           return "date_book_manage";
+           else
+               return "user_login";
+       }else
+       {
+           return "user_login";
+       }
     }
 }
