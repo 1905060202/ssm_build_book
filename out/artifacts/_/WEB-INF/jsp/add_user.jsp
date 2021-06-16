@@ -1,11 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: 10251
-  Date: 2021/6/10
-  Time: 9:15
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!doctype html>
@@ -19,8 +13,12 @@
     <meta name="author" content="">
     <link rel="icon" href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.9/favicon.ico">
     <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/dashboard/">
-
-    <title>用户管理系统</title>
+    <style>
+        #login{
+            width: 300px;
+        }
+    </style>
+    <title>图书管理系统</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.9/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -62,54 +60,59 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">用户总览 <span class="sr-only">(current)</span></a></li>
-                <li><a href="${pageContext.request.contextPath}/book/add_user">添加用户</a></li>
+                <li><a href="${pageContext.request.contextPath}/book/user_overview_book">用户总览 <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="#" >添加用户</a></li>
                 <li><a href="#">更新用户</a></li>
                 <li><a href="${pageContext.request.contextPath}">退出系统</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">自由使者</h1>
+            <h1 class="page-header">添加用户</h1>
 
             <div class="row placeholders">
                 <div class="col-xs-6 col-sm-3 placeholder">
-                    <img src="../../images/rljs.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                    <h4>胡雅宁</h4>
-                    <span class="text-muted">无拘无束，坦荡潇洒</span>
+                    <form action="${pageContext.request.contextPath}/book/real_add_user" method="post" class="form-horizontal " role="form">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">姓名:</label>
+                            <div class="col-sm-8">
+                                <input id="name" type="text" class="form-control" placeholder="姓名" name="name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">性别:</label>
+                            <div class="col-sm-8">
+                                <input id="sex" type="text" class="form-control" placeholder="性别" name="sex">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">生日:</label>
+                            <div class="col-sm-8">
+                                <input id="bir" type="text" class="form-control" placeholder="生日" name="birth">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">地址:</label>
+                            <div class="col-sm-8">
+                                <input id="addr" type="text" class="form-control" placeholder="地址" name="address">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">电话号码:</label>
+                            <div class="col-sm-8">
+                                <input id="phone" type="text" class="form-control" placeholder="电话号码" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8">
+                                <button id="login" type="submit" class="btn btn-success" >添加</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </div>
-
-            <h2 class="sub-header">用户总览</h2>
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>姓名</th>
-                        <th>性别</th>
-                        <th>生日</th>
-                        <th>地址</th>
-                        <th>电话号码</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach var="user" items="${list}">
-                        <tr>
-                            <td>${user.reader_id}</td>
-                            <td>${user.name}</td>
-                            <td>${user.sex}</td>
-                            <td>${user.birth}</td>
-                            <td>${user.address}</td>
-                            <td>${user.phone}</td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
 </div>
-
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
