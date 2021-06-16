@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hu.Mapper.userMapper">
+    <insert id="adduser" parameterType="reader_info">
+        insert into library.reader_info(reader_id,name,sex,birth,address,phone) values(#{reader_id},#{name},#{sex},#{birth},#{address},#{phone})
+    </insert>
+
+    <delete id="deleteuserById" parameterType="int">
+        delete
+        from library.reader_info
+        where user_id = #{user_id};
+    </delete>
+
+    <update id="updateuser" parameterType="reader_info">
+        update library.reader_info
+        set user_id = #{user_id},name = #{name},sex = #{sex},birth = #{birth},address = #{address},phone = #{phone}
+        where user_id = #{user_id}
+    </update>
+
+    <select id="queryuserById" parameterType="int" resultType="reader_info">
+        select * from library.reader_info where user_id = #{user_id}
+    </select>
+
+    <select id="queryAllUser" resultType="reader_info">
+        select * from library.reader_info
+    </select>
+</mapper>

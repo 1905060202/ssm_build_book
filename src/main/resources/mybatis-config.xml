@@ -11,6 +11,7 @@
 <mappers>
     <mapper class="com.hu.Mapper.bookMapper"/>
     <mapper class="com.hu.Mapper.adminMapper"/>
+    <mapper class="com.hu.Mapper.userMapper"/>
 </mappers>
 
 </configuration>

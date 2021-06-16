@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>图书管理系统</title>
+    <title>用户管理系统</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/JQuery.js"></script>
     <style>
@@ -46,8 +46,8 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="${pageContext.request.contextPath}">首页</a></li>
-                <li class="active"><a href="#">图书管理系统</a></li>
-                <li><a href="${pageContext.request.contextPath}/book/user_manage">用户管理系统</a></li>
+                <li><a href="${pageContext.request.contextPath}/book/book_manage_2">图书管理系统</a></li>
+                <li class="active"><a href="#">用户管理系统</a></li>
                 <li><a href="#">图书预约系统</a></li>
                 <li><a href="${pageContext.request.contextPath}/book/about">关于我</a></li>
             </ul>
@@ -55,7 +55,7 @@
     </div>
 </nav>
 
-<form action="${pageContext.request.contextPath}/book/book_manage_2" method="post" class="form-horizontal " role="form">
+<form action="${pageContext.request.contextPath}/book/user_manage" method="post" class="form-horizontal " role="form">
     <div class="form-group">
         <label class="col-sm-2 control-label">账号：</label>
         <div class="col-sm-10">

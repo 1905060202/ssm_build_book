@@ -17,6 +17,9 @@
         <property name="adminMapper" ref="adminMapper"/>
     </bean>
 
+    <bean id="userServicelmpl" class="com.hu.service.userServicelmpl">
+        <property name="userMapper" ref="userMapper"/>
+    </bean>
     <!--Declare thing configuration-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!--add data source-->

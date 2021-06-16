@@ -13,7 +13,7 @@ public class reader_info {
     private int reader_id;
     private String name;
     private String sex;
-    private Date birth;
+    private String birth;
     private String address;
-    private String number;
+    private String phone;
 }
