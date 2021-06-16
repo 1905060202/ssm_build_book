@@ -73,7 +73,7 @@
 
             <div class="row placeholders">
                 <div class="col-xs-6 col-sm-3 placeholder">
-                    <img src="${ctx}/images/rljs.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <img src="../../images/rljs.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>胡雅宁</h4>
                     <span class="text-muted">无拘无束，坦荡潇洒</span>
                 </div>

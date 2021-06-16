@@ -69,17 +69,22 @@
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">自由使者</h1>
+            <h1 class="page-header">查询图书</h1>
 
             <div class="row placeholders">
-                <div class="col-xs-6 col-sm-3 placeholder">
-                    <img src="../../images/rljs.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                    <h4>胡雅宁</h4>
-                    <span class="text-muted">无拘无束，坦荡潇洒</span>
+                <div class="col-xs-3 placeholder">
+                    <label class="col-xs-3 control-label">图书ID:</label>
+                    <div class="col-xs-6 ">
+                        <input id="book_id" type="text" class="form-control" placeholder="图书id" name="book_id">
+                    </div>
+                    <div  class="col-xs-2">
+                        <button id="login" type="submit" class="btn btn-success"> 搜索 </button>
+                    </div>
                 </div>
             </div>
 
-            <h2 class="sub-header">用户总览</h2>
+            <h2 class="sub-header">图书一览</h2>
+            <form action="#" method="post" class="form-horizontal " role="form">
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -92,20 +97,17 @@
                         <th>电话号码</th>
                     </tr>
                     </thead>
+
                     <tbody>
-                 <%--   <c:forEach var="user" items="${list}">
-                        <tr>
-                            <td>${user.reader_id}</td>
-                            <td>${user.name}</td>
-                            <td>${user.sex}</td>
-                            <td>${user.birth}</td>
-                            <td>${user.address}</td>
-                            <td>${user.phone}</td>
-                        </tr>
-                    </c:forEach>--%>
+
                     </tbody>
+
                 </table>
+                <div  class="col-xs-2">
+                    <button id="ok" type="submit" class="btn btn-success"> 预约</button>
+                </div>
             </div>
+            </form>
         </div>
     </div>
 </div>
