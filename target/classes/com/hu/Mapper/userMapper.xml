@@ -10,17 +10,17 @@
     <delete id="deleteuserById" parameterType="int">
         delete
         from library.reader_info
-        where user_id = #{user_id};
+        where reader_id = #{reader_id};
     </delete>
 
     <update id="updateuser" parameterType="reader_info">
         update library.reader_info
-        set user_id = #{user_id},name = #{name},sex = #{sex},birth = #{birth},address = #{address},phone = #{phone}
-        where user_id = #{user_id}
+        set reader_id = #{reader_id},name = #{name},sex = #{sex},birth = #{birth},address = #{address},phone = #{phone}
+        where reader_id = #{reader_id}
     </update>
 
     <select id="queryuserById" parameterType="int" resultType="reader_info">
-        select * from library.reader_info where user_id = #{user_id}
+        select * from library.reader_info where reader_id = #{reader_id}
     </select>
 
     <select id="queryAllUser" resultType="reader_info">

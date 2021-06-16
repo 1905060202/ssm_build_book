@@ -64,7 +64,7 @@
             <ul class="nav nav-sidebar">
                 <li class="active"><a href="#">用户总览 <span class="sr-only">(current)</span></a></li>
                 <li><a href="${pageContext.request.contextPath}/book/add_user">添加用户</a></li>
-                <li><a href="#">更新用户</a></li>
+                <li><a href="${pageContext.request.contextPath}/book/update_user">更新用户</a></li>
                 <li><a href="${pageContext.request.contextPath}">退出系统</a></li>
             </ul>
         </div>

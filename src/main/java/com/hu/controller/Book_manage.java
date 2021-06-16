@@ -44,6 +44,11 @@ public class Book_manage {
     public String add_user_page(){
         return "add_user";
     }
+    // just return update_user page
+    @RequestMapping("/update_user")
+    public String update_user_page(){
+        return "update_user";
+    }
     //return admin book manage page
     @RequestMapping("/admin_overview_book")
     public String back_overview(Model model){
@@ -103,5 +108,17 @@ public class Book_manage {
             return "user_manage";
         }
         return "add_user";
+    }
+    //implement update_user function
+    @RequestMapping("/real_update_user")
+    public String update_book(reader_info user,Model model){
+        int check = userService.updateuser(user);
+        if (check>0){
+            List<reader_info> list = userService.queryAllUser();
+            model.addAttribute("list",list);
+            return "user_manage";
+        }
+        model.addAttribute("check","fail");
+        return "update_user";
     }
 }
