@@ -41,6 +41,7 @@
                 <li><a href="${pageContext.request.contextPath}/book/book_manage_2">图书管理系统</a></li>
                 <li><a href="${pageContext.request.contextPath}/book/user_manage">用户管理系统</a></li>
                 <li><a href="${pageContext.request.contextPath}/book/user_login">图书预约系统</a></li>
+                <li><a href="${pageContext.request.contextPath}/book/course_manage">课程管理系统</a></li>
                 <li><a href="${pageContext.request.contextPath}/book/about">关于我</a></li>
             </ul>
         </div>

@@ -24,6 +24,10 @@
     <bean id="user_login_Servicelmpl" class="com.hu.service.user_login_Servicelmpl">
         <property name="user_login_Mapper" ref="user_login_Mapper"/>
     </bean>
+
+    <bean id="CourseServicelmpl" class="com.hu.service.CourseServicelmpl">
+        <property name="CourseMapper" ref="courseMapper"/>
+    </bean>
     <!--Declare thing configuration-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!--add data source-->
